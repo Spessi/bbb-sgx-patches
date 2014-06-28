@@ -1,0 +1,11 @@
+--- qt-everywhere-opensource-src-4.8.6/src/plugins/gfxdrivers/powervr/QWSWSEGL/pvrqwswsegl_orig.c	2014-06-11 12:18:16.495151000 +0200
++++ qt-everywhere-opensource-src-4.8.6/src/plugins/gfxdrivers/powervr/QWSWSEGL/pvrqwswsegl.c	2014-06-11 12:18:57.190860281 +0200
+@@ -39,7 +39,7 @@
+ **
+ ****************************************************************************/
+ 
+-#include <GLES/eglplatform.h>
++#include <EGL/eglplatform.h>
+ #include <wsegl.h>
+ #include <pvr2d.h>
+ #include <string.h>

@@ -1,0 +1,20 @@
+diff -uNr Graphics_SDK_4_10_00_01.org/GFX_Linux_KM/services4/srvkm/env/linux/module.c Graphics_SDK_4_10_00_01/GFX_Linux_KM/services4/srvkm/env/linux/module.c
+--- Graphics_SDK_4_10_00_01.org/GFX_Linux_KM/services4/srvkm/env/linux/module.c	2013-12-06 13:21:17.156841742 +0100
++++ Graphics_SDK_4_10_00_01/GFX_Linux_KM/services4/srvkm/env/linux/module.c	2013-12-06 15:12:37.592382258 +0100
+@@ -296,10 +296,16 @@
+ };
+ #endif
+ 
++static const struct of_device_id powervr_table[] = {
++	{ .compatible = "ti,sgx", .data = NULL, },
++	{ }
++};
++
+ static LDM_DRV powervr_driver = {
+ #if defined(PVR_LDM_PLATFORM_MODULE)
+ 	.driver = {
+ 		.name		= DRVNAME,
++		.of_match_table	= powervr_table,
+ 	},
+ #endif
+ #if defined(PVR_LDM_PCI_MODULE)
